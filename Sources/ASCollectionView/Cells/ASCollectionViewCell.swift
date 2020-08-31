@@ -13,6 +13,15 @@ class ASCollectionViewCell: UICollectionViewCell, ASDataSourceConfigurableCell
 		get { _hostingController }
 		set { _hostingController = newValue; attachView() }
 	}
+	override var alpha: CGFloat {
+		set {
+			// ignore
+			print("trying to set alpha to: \(newValue)")
+		}
+		get {
+			return 1.0
+		}
+	}
 
 	private var _hostingController: ASHostingControllerProtocol?
 
